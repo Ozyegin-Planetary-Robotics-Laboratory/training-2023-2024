@@ -1,0 +1,27 @@
+<launch>
+
+  
+  <param name="robot_description" textfile="$(find ros_task)/urdf/arm_model.urdf" />
+
+ 
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+
+  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-urdf -model arm_model -param robot_description"
+        output="screen" />
+  
+  <rosparam file ="$(find ros_task)/config/controllers.yaml" command="load"/>
+  <node name= "controller_spawner" pkg= "controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller joint1_position_controller joint2_position_controller "/>
+
+  <node name="robot_control_node" pkg="ros_task" type="joint_position_publisher" output="screen" />
+</launch>
+  

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_task</name>
+  <version>0.0.1</version>
+  <description>The robotic arm project</description>
+
+  <maintainer email="ozu@example.com">ozu</maintainer>
+  <license>BSD</license>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>control_msgs</depend>
+  <depend>hardware_interface</depend>
+  <depend>transmission_interface</depend>
+  <depend>controller_manager</depend>
+  <depend>gazebo_ros</depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

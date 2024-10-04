@@ -1,0 +1,5 @@
+print("EEEEE    FFFFF    EEEEE")
+print("E        F        E")
+print("EEEE     FFFF     EEEE")
+print("E        F        E")
+print("EEEEE    F        EEEEE")
